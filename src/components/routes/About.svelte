@@ -6,7 +6,9 @@
   This is an <a href="https://github.com/dodiameer/swapi-svelte"
     >open source project</a
   >
-  built in an afternoon using Svelte, Typescript, URQL, and
+  built in an afternoon using <a href="https://svelte.dev">Svelte</a>,
+  <a href="https://www.typescriptlang.org/">Typescript</a>,
+  <a href="https://formidable.com/open-source/urql/">URQL</a>, and
   <a href="https://github.com/graphql/swapi-graphql"
     >the Star Wars API GraphQL Wrapper</a
   >. It isn't meant to be for Star Wars geeks and doesn't show you more
