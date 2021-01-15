@@ -18,3 +18,15 @@
   free to clone the repo from GitHub and do anything with it, just make sure you
   change the API url to your own hosted one. Good luck!
 </p>
+
+<h2>NPM Packages used</h2>
+<ul>
+  <li><a href="https://svelte.dev">Svelte</a></li>
+  <li>
+    <a href="https://github.com/ItalyPaleAle/svelte-spa-router"
+      >Svelte SPA Router</a
+    >
+  </li>
+  <li><a href="https://formidable.com/open-source/urql/">URQL</a></li>
+  <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+</ul>
