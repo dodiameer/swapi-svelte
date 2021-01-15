@@ -20,10 +20,13 @@
   query(allPeople);
 </script>
 
+<svelte:head>
+  <title>SWAPI Svelte</title>
+</svelte:head>
 {#if $allPeople.fetching}
   <LoadingAlert />
 {:else if $allPeople.error}
-  <FetchError error={$allPeople.error} />
+  <FetchError error="{$allPeople.error}" />
 {:else}
   <ul>
     {#each $allPeople.data.allPeople.people as { id, name, birthYear, homeworld: { name: homeworld } }}

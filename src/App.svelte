@@ -4,9 +4,6 @@
   import { link } from "svelte-spa-router";
 </script>
 
-<svelte:head>
-  <title>SWAPI Svelte</title>
-</svelte:head>
 <UrqlProvider>
   <RouterProvider>
     <nav slot="default">
