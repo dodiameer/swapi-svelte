@@ -8,6 +8,7 @@
   <RouterProvider>
     <nav slot="default">
       <a href="/" use:link>Person List</a>
+      <a href="/about" use:link>About</a>
     </nav>
     <footer slot="footer">
       This website is powered by <a

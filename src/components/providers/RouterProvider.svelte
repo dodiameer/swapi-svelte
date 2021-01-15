@@ -3,12 +3,14 @@
   import AllPeople from "../routes/AllPeople.svelte";
   import PersonDetails from "../routes/PersonDetails.svelte";
   import Router from "svelte-spa-router";
+  import About from "../routes/About.svelte";
 
   // Route definitions
   // Not separated into a TS file as it's only used here
   const routes = {
     "/": AllPeople,
     "/person/:id": PersonDetails,
+    "/about": About,
   };
 
   /* This is a provider for the Router component
@@ -25,5 +27,5 @@
 </script>
 
 <slot />
-<Router {routes} />
+<Router routes="{routes}" />
 <slot name="footer" />
