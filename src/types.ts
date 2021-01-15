@@ -25,8 +25,10 @@ export type AllPeopleType = {
   homeworld: {
     name: string;
   };
-};
+}[];
 
 export type AllPeopleQueryData = {
-  allPeople: AllPeopleType;
+  allPeople: {
+    people: AllPeopleType;
+  };
 };

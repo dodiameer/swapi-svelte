@@ -3,10 +3,14 @@
   import FetchError from "../ui/FetchError.svelte";
   import LoadingAlert from "../ui/LoadingAlert.svelte";
   import { link } from "svelte-spa-router";
+  import type { AllPeopleQueryData } from "../../types";
 
   let limit = 10;
 
-  const allPeople = operationStore(
+  const allPeople = operationStore<
+    AllPeopleQueryData,
+    { limit: number; after?: string }
+  >(
     gql`
       query AllPeople($limit: Int!, $after: String) {
         allPeople(first: $limit, after: $after) {
