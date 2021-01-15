@@ -1,35 +1,18 @@
 <script lang="ts">
   // Imports
-  import { query, operationStore, gql } from "@urql/svelte";
+  import { query, operationStore } from "@urql/svelte";
   import FetchError from "../ui/FetchError.svelte";
   import LoadingAlert from "../ui/LoadingAlert.svelte";
   import { pop as popRoute } from "svelte-spa-router";
   import type { PersonDetailsQueryData, PersonDetailsType } from "../../types";
+  import { PERSON_DETAILS_QUERY } from "../../queries";
 
   // Props
   export let params: { id: string };
 
   // Query logic
   const personDetails = operationStore<PersonDetailsQueryData, { id: string }>(
-    gql`
-      query($id: ID!) {
-        person(id: $id) {
-          id
-          name
-          birthYear
-          gender
-          height
-          homeworld {
-            name
-            population
-          }
-          species {
-            name
-            classification
-          }
-        }
-      }
-    `,
+    PERSON_DETAILS_QUERY,
     { id: params.id }
   );
 

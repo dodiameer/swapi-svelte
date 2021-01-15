@@ -14,3 +14,23 @@ export const ALL_PEOPLE_QUERY = gql`
     }
   }
 `;
+
+export const PERSON_DETAILS_QUERY = gql`
+  query($id: ID!) {
+    person(id: $id) {
+      id
+      name
+      birthYear
+      gender
+      height
+      homeworld {
+        name
+        population
+      }
+      species {
+        name
+        classification
+      }
+    }
+  }
+`;
