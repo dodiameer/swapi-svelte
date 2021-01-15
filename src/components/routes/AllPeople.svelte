@@ -8,5 +8,5 @@
    */
 </script>
 
-<h1>This is a list of all the people available</h1>
+<h1>Person list</h1>
 <AllPeopleData />
