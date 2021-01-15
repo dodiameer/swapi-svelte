@@ -1,4 +1,5 @@
 <script lang="ts">
+  // Imports
   import { operationStore, query } from "@urql/svelte";
   import FetchError from "../ui/FetchError.svelte";
   import LoadingAlert from "../ui/LoadingAlert.svelte";
@@ -6,6 +7,7 @@
   import type { AllPeopleQueryData } from "../../types";
   import { ALL_PEOPLE_QUERY } from "../../queries";
 
+  // Query logic
   let limit = 10;
 
   const allPeople = operationStore<
