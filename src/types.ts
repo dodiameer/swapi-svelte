@@ -17,3 +17,16 @@ export type PersonDetailsType = {
 export type PersonDetailsQueryData = {
   person: PersonDetailsType;
 };
+
+export type AllPeopleType = {
+  id: string;
+  name: string;
+  birthYear: string | "unknown";
+  homeworld: {
+    name: string;
+  };
+};
+
+export type AllPeopleQueryData = {
+  allPeople: AllPeopleType;
+};
