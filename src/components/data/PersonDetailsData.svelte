@@ -3,7 +3,6 @@
   import { query, operationStore } from "@urql/svelte";
   import FetchError from "../ui/FetchError.svelte";
   import LoadingAlert from "../ui/LoadingAlert.svelte";
-  import { pop as popRoute } from "svelte-spa-router";
   import type { PersonDetailsQueryData, PersonDetailsType } from "../../types";
   import { PERSON_DETAILS_QUERY } from "../../queries";
 
@@ -24,7 +23,6 @@
   $: data = $personDetails?.data?.person;
 </script>
 
-<button role="link" on:click={popRoute}>Go Back</button>
 {#if $personDetails.fetching}
   <LoadingAlert />
 {:else if $personDetails.error}

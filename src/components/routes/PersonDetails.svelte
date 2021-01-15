@@ -1,5 +1,6 @@
 <script lang="ts">
   import PersonDetailsData from "../data/PersonDetailsData.svelte";
+  import { pop as popRoute } from "svelte-spa-router";
   export let params: { id: string } = { id: "" };
 
   /**
@@ -9,5 +10,6 @@
    */
 </script>
 
-<h1>Person details route</h1>
+<h1>Person details</h1>
+<button role="link" on:click={popRoute}>Go Back</button>
 <PersonDetailsData {params} />
