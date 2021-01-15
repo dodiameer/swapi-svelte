@@ -23,10 +23,19 @@
   $: data = $personDetails?.data?.person;
 </script>
 
+<svelte:head>
+  {#if $personDetails.fetching}
+    <title>Loading... - SWAPI Svelte</title>
+  {:else if $personDetails.error}
+    <title>Error - SWAPI Svelte</title>
+  {:else}
+    <title>{data.name} - SWAPI Svelte</title>
+  {/if}
+</svelte:head>
 {#if $personDetails.fetching}
   <LoadingAlert />
 {:else if $personDetails.error}
-  <FetchError error={$personDetails.error} />
+  <FetchError error="{$personDetails.error}" />
 {:else}
   <h1>{data.name}</h1>
   <ul>
