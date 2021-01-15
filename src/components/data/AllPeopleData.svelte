@@ -1,34 +1,19 @@
 <script lang="ts">
-  import { operationStore, query, gql } from "@urql/svelte";
+  import { operationStore, query } from "@urql/svelte";
   import FetchError from "../ui/FetchError.svelte";
   import LoadingAlert from "../ui/LoadingAlert.svelte";
   import { link } from "svelte-spa-router";
   import type { AllPeopleQueryData } from "../../types";
+  import { ALL_PEOPLE_QUERY } from "../../queries";
 
   let limit = 10;
 
   const allPeople = operationStore<
     AllPeopleQueryData,
     { limit: number; after?: string }
-  >(
-    gql`
-      query AllPeople($limit: Int!, $after: String) {
-        allPeople(first: $limit, after: $after) {
-          people {
-            id
-            name
-            birthYear
-            homeworld {
-              name
-            }
-          }
-        }
-      }
-    `,
-    {
-      limit,
-    }
-  );
+  >(ALL_PEOPLE_QUERY, {
+    limit,
+  });
 
   query(allPeople);
 </script>
