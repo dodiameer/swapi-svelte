@@ -36,7 +36,11 @@
             {name}
           </a>
         </h1>
-        <h2>Born in {birthYear} at {homeworld}</h2>
+        {#if birthYear !== "unknown"}
+          <h2>Born in {birthYear} at {homeworld}</h2>
+        {:else}
+          <h2>Born at {homeworld} (Birth year unknown)</h2>
+        {/if}
       </li>
     {/each}
   </ul>
